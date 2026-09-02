@@ -4,7 +4,16 @@ import java.io.IOException;
 
 public class Main {
     
-    static long timeWait = 250;
+    static long timeWait = 10;
+
+    public static boolean gameOver(Carte tab) {
+        for(int i = 0; i < tab.getMap()[0].length; i++) {
+            if(tab.getMap()[0][i].isOccupe()) {
+                return false;
+            }
+        }
+        return true;
+    }
     
     public static void getDown(Case block, Carte tab) throws InterruptedException, IOException{
         Case[][] map = tab.getMap();
@@ -29,12 +38,20 @@ public class Main {
 
         try{
             boolean isOn = true;
-            while (isOn) {
+            while (Main.gameOver(tab)) {;
                 Case block = new Case(5, 0, "██");
                 getDown(block, tab);
             }
         } catch(InterruptedException ie){}
         catch(IOException ioe){}
+
+        try{
+            Affichage.afficherGameOver(tab);
+        } catch (IOException e) {}
+
+        Affichage.afficherPhrase("Appuyez sur"+ Affichage.ROUGE + " ENTER ⏎ " + Affichage.RESET+ "pour lancer une nouvelle partie", 2);
+
+
 
     }
 }
