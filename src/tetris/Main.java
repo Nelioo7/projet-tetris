@@ -1,10 +1,6 @@
 package tetris;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Scanner;
-import java.io.*;
 
 public class Main {
     
@@ -16,8 +12,13 @@ public class Main {
             block.move(block.getPosX(), block.getPosY() + 1);
             Affichage.afficherTetris(tab, block);
             Thread.sleep(timeWait);
-            Affichage.clearScreen();       
-            
+            int c = System.in.read();
+            if (c == 'd' && block.getPosX()<9 && !map[block.getPosY()][block.getPosX() + 1].isOccupe()) {
+                block.move(block.getPosX()+1, block.getPosY());
+            }
+            if (c == 'q' && block.getPosX()>0 && !map[block.getPosY()][block.getPosX() - 1].isOccupe()) {
+                block.move(block.getPosX()-1, block.getPosY());
+            }
         }
         map[block.getPosY()][block.getPosX()].setOccupe(true);;
     }

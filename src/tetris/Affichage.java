@@ -24,7 +24,7 @@ public class Affichage {
                 if ( x == block.getPosX() && y == block.getPosY()){
                     sb.append(block.getShape());
                 }else if (map[y][x].isOccupe()) {
-                    sb.append(map[y][x].getShape());
+                    sb.append("██");
                 }else{
                     sb.append("  ");
                 }
