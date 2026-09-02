@@ -16,6 +16,7 @@ public class Main {
             block.move(block.getPosX(), block.getPosY() + 1);
             Affichage.afficherTetris(tab, block);
             Thread.sleep(timeWait);
+            Affichage.clearScreen();       
             
         }
         map[block.getPosY()][block.getPosX()].setOccupe(true);;
