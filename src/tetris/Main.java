@@ -15,7 +15,7 @@ public class Main {
         return true;
     }
     
-    public static void getDown(Case block, Carte tab) throws InterruptedException, IOException{
+    /*public static void getDown(Carre carre, Carte tab) throws InterruptedException, IOException{
         Case[][] map = tab.getMap();
         while (block.getPosY() + 1 < map.length && !map[block.getPosY() + 1][block.getPosX()].isOccupe()){
             block.move(block.getPosX(), block.getPosY() + 1);
@@ -30,12 +30,11 @@ public class Main {
             }
             Affichage.clearScreen();
         }
-        map[block.getPosY()][block.getPosX()].setOccupe(true);;
-    }
+        map[block.getPosY()][block.getPosX()].setOccupe(true);
+    }*/
 
     public static void main(String[] args){
         Carte tab = new Carte();
-
         try{
             boolean isOn = true;
             while (Main.gameOver(tab)) {;
