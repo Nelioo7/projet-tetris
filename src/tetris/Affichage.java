@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Affichage {
     
-    public static void afficherTetris(Carte carte, Case block) throws IOException{
+    public static void afficherTetris(Carte carte, Bloc block) throws IOException{
         
         BufferedReader br = new BufferedReader(new FileReader("res/affichage/ascii-art.txt"));
         String line;
@@ -21,11 +21,16 @@ public class Affichage {
             StringBuilder sb = new StringBuilder();
             sb.append("                                     █");
             for (int x=0 ; x < map[0].length; x++) {
-                if ( x == block.getPosX() && y == block.getPosY()){
-                    sb.append(block.getShape());
-                }else if (map[y][x].isOccupe()) {
+                boolean blockTrouve = false;
+                for (int i=0 ; i < block.getCases().length ; i++) {
+                    if ( x == block.getCases()[i].getPosX() && y == block.getCases()[i].getPosY()){
+                        sb.append(block.getCases()[i].getShape());
+                        blockTrouve = true;
+                    }
+                }
+                if (map[y][x].isOccupe()) {
                     sb.append("██");
-                }else{
+                }else if (!blockTrouve){
                     sb.append("  ");
                 }
             }
