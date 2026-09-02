@@ -3,17 +3,22 @@ package tetris;
 import java.io.IOException;
 
 public abstract class Bloc {
-    private final static long TIMEWAIT = 250;
+    private final static long TIMEWAIT = 10;
     private Case[] cases;
     private Case[][] map;
 
     public void getDown(Carte carte) throws InterruptedException, IOException{
         while (this.peutDescendre()){
+            Affichage.clearScreen();
             Affichage.afficherTetris(carte, this);
             Thread.sleep(TIMEWAIT);
-            this.descendre();
+            // this.descendre();
             char c = (char) System.in.read();
-            this.deplacement(c);
+            if (c != '\n' && c != '\r') {
+                this.deplacement(c);
+            }else if (c == '\n' || c == '\r'){
+                this.descendre();
+            }
         }
     }
 

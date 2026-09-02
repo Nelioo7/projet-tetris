@@ -14,7 +14,7 @@ public class Affichage {
     public static final String VERT = "\u001B[32m";
     public static Random rand = new Random();
 
-    public static void afficherTetris(Carte carte, Case block) throws IOException{
+    public static void afficherTetris(Carte carte, Bloc block) throws IOException{
         
         BufferedReader br = new BufferedReader(new FileReader("res/affichage/ascii-art.txt"));
         StringBuilder s = new StringBuilder();
