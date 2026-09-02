@@ -19,6 +19,7 @@ public class Main {
             if (c == 'q' && block.getPosX()>0 && !map[block.getPosY()][block.getPosX() - 1].isOccupe()) {
                 block.move(block.getPosX()-1, block.getPosY());
             }
+            Affichage.clearScreen();
         }
         map[block.getPosY()][block.getPosX()].setOccupe(true);;
     }
