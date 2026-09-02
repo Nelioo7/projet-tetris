@@ -19,16 +19,17 @@ public class Main {
         Carte tab = new Carte();
         try{
             while (Main.gameOver(tab)) {;
-                Bloc block = new L(tab);
+                Bloc block = new Carre(tab);
                 block.getDown(tab);
                 for (int i=0 ; i<block.getCases().length ; i++){
                     block.getMap()[block.getCases()[i].getPosY()][block.getCases()[i].getPosX()].setOccupe(true);
                 }
+                tab.ligneASup();
             }
         } catch(InterruptedException ie){}
         catch(IOException ioe){}
-
         try{
+            Affichage.clearScreen();
             Affichage.afficherGameOver(tab);
         } catch (IOException e) {}
 
