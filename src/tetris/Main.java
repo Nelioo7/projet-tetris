@@ -4,7 +4,16 @@ import java.io.IOException;
 
 public class Main {
     
-    static long timeWait = 250;
+    static long timeWait = 10;
+
+    public static boolean gameOver(Carte tab) {
+        for(int i = 0; i < tab.getMap()[0].length; i++) {
+            if(tab.getMap()[0][i].isOccupe()) {
+                return false;
+            }
+        }
+        return true;
+    }
     
     /*public static void getDown(Carre carre, Carte tab) throws InterruptedException, IOException{
         Case[][] map = tab.getMap();
@@ -19,6 +28,7 @@ public class Main {
             if (c == 'q' && block.getPosX()>0 && !map[block.getPosY()][block.getPosX() - 1].isOccupe()) {
                 block.move(block.getPosX()-1, block.getPosY());
             }
+            Affichage.clearScreen();
         }
         map[block.getPosY()][block.getPosX()].setOccupe(true);
     }*/
@@ -27,15 +37,20 @@ public class Main {
         Carte tab = new Carte();
         try{
             boolean isOn = true;
-            while (isOn) {
-                Carre carre = new Carre(tab);
-                carre.getDown(tab);
-                for (int i=0 ; i<carre.getCases().length ; i++){
-                    carre.getMap()[carre.getCases()[i].getPosY()][carre.getCases()[i].getPosX()].setOccupe(true);
-                }
+            while (Main.gameOver(tab)) {;
+                Case block = new Case(5, 0, "██");
+                getDown(block, tab);
             }
         } catch(InterruptedException ie){}
         catch(IOException ioe){}
+
+        try{
+            Affichage.afficherGameOver(tab);
+        } catch (IOException e) {}
+
+        Affichage.afficherPhrase("Appuyez sur"+ Affichage.ROUGE + " ENTER ⏎ " + Affichage.RESET+ "pour lancer une nouvelle partie", 2);
+
+
 
     }
 }
