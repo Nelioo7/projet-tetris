@@ -6,7 +6,7 @@ import org.jline.terminal.Terminal;
 import org.jline.utils.NonBlockingReader;
 
 public abstract class Bloc {
-    private final static long timeOut = 100;
+    private final static long timeOut = 200;
     private Case[] cases;
     private Case[][] map;
 
@@ -22,13 +22,21 @@ public abstract class Bloc {
 
             // Lecture clavier pendant maximum 500 ms
             int c = reader.read(timeOut);
+
+            // Si aucune touche n'a été pressée, on continue simplement
+            if (c == -1) {
+                c = 0;
+            }
             // stopper le soft
             if (c == 27) System.exit(0); // ESC = 27 dans le tableau ASCII
 
 
-            if( c == 'q'  && this.peutAllerAGauche() || c == 'd' && this.peutAllerADroite()) {
+
+            // char c = (char) System.in.read();
+            // if (c != '\n' && c != '\r') {
+            if( c == 'q' || c == 'd') {
                 this.deplacement((char) c);
-            }else {
+            }else if (c != 'q' || c != 'd'){
                 this.descendre();
             }
         }
