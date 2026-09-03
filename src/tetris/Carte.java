@@ -1,5 +1,8 @@
 package tetris;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Carte {
     private Case[][] map;
 
@@ -18,6 +21,7 @@ public class Carte {
 
     public void ligneASup(){
         boolean res = true;
+        List<Integer> l = new ArrayList<>();
         for(int i=0;i<this.map.length;i++){
             res = true;
             for(int j=0;j < this.map[i].length;j++){
@@ -27,8 +31,10 @@ public class Carte {
             }
             if(res){
                 supprimerLigne(i);
+                l.add(i);
             }
         }
+        actualiserLigne(l);
     }
 
     public int supprimerLigne(int ligne){
@@ -36,5 +42,20 @@ public class Carte {
             map[ligne][g].setOccupe(false);
         }
         return ligne;
+    }
+
+    public void actualiserLigne(List<Integer> l){
+        for(int j=0;j<l.size();j++){
+            for(int i=this.map.length-1;i>0;i--){
+                for(int k=0;k<this.map[i].length;k++){
+                    if(l.get(j)>=i && this.map[i-1][k].isOccupe()){
+                        this.map[i][k].setOccupe(true);//.setPosY(this.map[i][k].getPosY()+1);
+                        this.map[i-1][k].setOccupe(false);
+                    }
+                    
+                }
+
+            }
+        }
     }
 }
