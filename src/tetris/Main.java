@@ -1,9 +1,10 @@
 package tetris;
 
 import java.io.IOException;
+import java.util.Random;
+
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
-import org.jline.terminal.Terminal.Signal;
 import org.jline.utils.NonBlockingReader;
 
 public class Main {
