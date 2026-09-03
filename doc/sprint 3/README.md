@@ -1,4 +1,4 @@
-# Sprint X
+# Sprint 3
 
 Scrum Master : Issa
 
@@ -12,7 +12,7 @@ Scrum Master : Issa
 ### Ce que nous allons faire durant le prochain sprint
 * Ajouter de la couleur au jeu
 * Implémenter de véritables blocs
-* Mettre le jeu en tamps réel
+* Mettre le jeu en temps réel
 
 ## Rétrospective
 * La division en 2 équipes de 3 personnes fonctionne bien.

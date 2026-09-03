@@ -1,4 +1,4 @@
-# Sprint X
+# Sprint 2
 
 Scrum Master : Gauthier
 

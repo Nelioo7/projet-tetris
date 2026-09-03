@@ -42,6 +42,7 @@ public class Main {
             }
         } catch(InterruptedException ie){}
         catch(IOException ioe){}
+        
         try{
             Affichage.clearScreen();
             Affichage.afficherGameOver(tab);
