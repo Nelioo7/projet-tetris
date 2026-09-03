@@ -1,9 +1,10 @@
 {
     "java.project.sourcePaths": [
-        "src"
+        "src",
+        "test"
     ],
     "java.project.referencedLibraries": [
-        "lib/jline-4.3.1.jar",
-        "/home/infoetu/gauthier.guignon.etu/groupe-13/lib/jline-4.3.1.jar"
-    ]
+        "lib/*.jar",
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
