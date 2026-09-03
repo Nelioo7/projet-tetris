@@ -48,7 +48,7 @@ public class Affichage {
                     }
                 }
                 if (map[y][x].isOccupe()) {
-                    sb.append(block.getCouleur() + "██" + Affichage.RESET);
+                    sb.append(map[y][x].getCouleur() + "██" + Affichage.RESET);
                 }else if (!blockTrouve){
                     sb.append("  ");
                 }

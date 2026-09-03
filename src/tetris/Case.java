@@ -8,15 +8,16 @@ public class Case {
     private String couleur;
 
     
-    public Case(int posX, int posY, String shape){
+    public Case(int posX, int posY, String shape, String couleur){
         this.posX = posX;
         this.posY = posY;
         this.shape = shape;
         this.occupe = false;
+        this.couleur = couleur;
     }
     
     public Case(){
-        this(0, 0, "██");
+        this(0, 0, "██", Affichage.BLEU);
     }
     
     public int getPosX(){

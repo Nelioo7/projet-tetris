@@ -55,7 +55,7 @@ public abstract class Bloc {
             if (!(this.cases[i].getPosY() + 1<this.map.length) || this.map[this.cases[i].getPosY() + 1][this.cases[i].getPosX()].isOccupe()) {
                 res = false;
                 for(Case c : this.getCases()) {
-                    c.setCouleur(this.couleur);
+                   c.setCouleur(this.couleur);
                 }
             }
         }
