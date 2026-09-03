@@ -17,7 +17,7 @@ Scrum Master : Jeremy
 
 ## Rétrospective
 *  l'equipe s'entre aide et nous permet d'avancer beaucoup plus vite
-* nous devons pus nou renseigner et apprendre les commande git et son fonctionnement.
+* nous devons plus nous renseigner et apprendre les commande git et son fonctionnement.
 
 ### Sur quoi avons nous butté ?
 
