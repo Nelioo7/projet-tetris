@@ -9,4 +9,10 @@ public class Carre extends Bloc {
         this.getCases()[3] = new Case(5, 1, "██");
         this.setMap(carte.getMap());
     }
+
+    public void rotation(){}
+
+    public boolean peutTourner(){
+        return false;
+    }
 }

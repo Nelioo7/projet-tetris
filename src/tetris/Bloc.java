@@ -26,7 +26,7 @@ public abstract class Bloc {
             if (c == 27) System.exit(0); // ESC = 27 dans le tableau ASCII
 
 
-            if( c == 'q'  && this.peutAllerAGauche() || c == 'd' && this.peutAllerADroite()) {
+            if( c == 'q'  && this.peutAllerAGauche() || c == 'd' && this.peutAllerADroite() || c == ' ' && this.peutTourner()) {
                 this.deplacement((char) c);
             }else {
                 this.descendre();
@@ -66,6 +66,9 @@ public abstract class Bloc {
                 descendre();
             }
         }
+        if(c == ' '){
+            rotation();
+        }
     }
 
     public boolean peutAllerADroite(){
@@ -88,6 +91,8 @@ public abstract class Bloc {
         return res;
     }
 
+    public abstract boolean peutTourner();
+
     public Case[] getCases() {
         return cases;
     }
@@ -103,4 +108,6 @@ public abstract class Bloc {
     public void setMap(Case[][] map) {
         this.map = map;
     }
+
+    public abstract void rotation();
 }
