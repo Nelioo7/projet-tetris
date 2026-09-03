@@ -1,6 +1,8 @@
 package tetris;
 
 import java.io.IOException;
+import java.util.Random;
+
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.jline.terminal.Terminal.Signal;
@@ -24,7 +26,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException{
         Carte tab = new Carte();
-
+        Random r = new Random();
         Terminal t = TerminalBuilder.builder().dumb(true).build();
         t.enterRawMode();
 
