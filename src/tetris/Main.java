@@ -61,9 +61,10 @@ public class Main {
                 Affichage.clearScreen();
                 Affichage.afficherGameOver(tab);
             } catch (IOException e) {}
-            Affichage.afficherPhrase("Bravo "+ Affichage.VERT + Main.nomDuJoeur +Affichage.RESET+ "! Appuyez sur"+ Affichage.ROUGE + " ENTER ⏎ " + Affichage.RESET+ "pour lancer une nouvelle partie, ou " + Affichage.ROUGE + "ECHAP" + Affichage.RESET + " pour quitter", 0);
+            Affichage.afficherPhrase("\nBravo "+ Affichage.VERT + Main.nomDuJoeur +Affichage.RESET+ "! Appuyez sur"+ Affichage.ROUGE + " ENTER ⏎ " + Affichage.RESET+ "pour lancer une nouvelle partie, ou " + Affichage.ROUGE + "ECHAP" + Affichage.RESET + " pour quitter", 0);
 
             Main.score = 0;
+            Bloc.timeOut = 500; //Valeur par défaut au start
             rejouer = false;
 
             while (true) {
@@ -74,9 +75,10 @@ public class Main {
                 }
                 if (c == 13 || c == 10) { // Entrée = 13 ou 10 dans le tableau ASCII
                     rejouer = true;
-                    t.setAttributes(attrs);
-                    Main.nomDuJoeur = w.demanderNomDuJoeur();
-                    t.enterRawMode();
+                    // Redemander le nom du joueur en fin de partie --> 
+                    // t.setAttributes(attrs);
+                    // // Main.nomDuJoeur = w.demanderNomDuJoeur();
+                    // t.enterRawMode();
                     break;
                 }
             }

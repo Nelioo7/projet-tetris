@@ -48,7 +48,7 @@ public abstract class Bloc {
                 c = 0;
             }
             // stopper le soft
-            if (c == 'p') System.exit(0); // Ctrl+C = 3 dans le tableau ASCII
+            if (c == 'p') System.exit(0);
 
 
             if( c == 'q'  && this.peutAllerAGauche() || c == 'd' && this.peutAllerADroite() || c == ' ' && this.peutTourner()) {

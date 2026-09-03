@@ -20,14 +20,18 @@ public class Writer {
     }
 
     public static void ecrireLeaderboard() throws IOException{
+        
+        // Lecture du leaderboard
         BufferedReader br = new BufferedReader(new FileReader("res/leaderboard/leaderboard.txt"));
         String line;
-        System.out.println(Affichage.ROUGE);
         while ((line = br.readLine()) != null) {
             System.out.println(line);
         }
         System.out.println(Affichage.RESET);
+        
+        System.out.println(Affichage.ROUGE);
         br.close();
+
     }
 
 
