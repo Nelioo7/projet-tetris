@@ -1,6 +1,6 @@
 # Sprint 7
 
-Scrum Master : Jerôme
+Scrum Master : Jérémy
 
 ## Démo + Planification du sprint suivant
 * le jeux est completemnt jouable il ne nous reste plus qu'a rajouter des element estetique et des fonctionnaliter secondaire.

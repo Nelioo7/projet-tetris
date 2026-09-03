@@ -1,6 +1,6 @@
 # Sprint 8
 
-Scrum Master : Jeremy
+Scrum Master : Jerôme
 
 ## Démo + Planification du sprint suivant
 * le jeux est completemnt jouable il ne nous reste plus qu'a fuisionner les versions "éstetiques" (couleur,score) et la version où l'on peut retourner les blocs 
