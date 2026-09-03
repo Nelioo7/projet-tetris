@@ -1,10 +1,17 @@
 package tetris;
 
 import java.io.IOException;
+import org.jline.terminal.Terminal;
+import org.jline.terminal.TerminalBuilder;
+import org.jline.terminal.Terminal.Signal;
+import org.jline.utils.NonBlockingReader;
+
+// javac -d bin -cp bin:lib/jline-4.3.1.jar src/tetris/*.java
+// java -cp bin:lib/jline-4.3.1.jar tetris.Main
 
 public class Main {
     
-    static long timeWait = 10;
+    static long timeOut = 500;
 
     public static boolean gameOver(Carte tab) {
         for(int i = 0; i < tab.getMap()[0].length; i++) {
@@ -15,12 +22,16 @@ public class Main {
         return true;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         Carte tab = new Carte();
+
+        Terminal t = TerminalBuilder.builder().dumb(true).build();
+        t.enterRawMode();
+
         try{
             while (Main.gameOver(tab)) {;
                 Bloc block = new Carre(tab);
-                block.getDown(tab);
+                block.getDown(tab, t);
                 for (int i=0 ; i<block.getCases().length ; i++){
                     block.getMap()[block.getCases()[i].getPosY()][block.getCases()[i].getPosX()].setOccupe(true);
                 }
