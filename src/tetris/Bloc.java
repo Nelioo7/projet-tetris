@@ -7,7 +7,7 @@ import org.jline.terminal.Terminal;
 import org.jline.utils.NonBlockingReader;
 
 public abstract class Bloc {
-    private final static long timeOut = 200;
+    public static long timeOut = 500;
     private Case[] cases;
     private Case[][] map;
     private String couleur;
@@ -36,10 +36,9 @@ public abstract class Bloc {
         while (this.peutDescendre()){
             Affichage.clearScreen();
             Affichage.afficherTetris(carte, this);
-            // Thread.sleep(TIMEWAIT);
-            // this.descendre();
 
             // Lecture clavier pendant maximum 500 ms
+
             int c = reader.read(timeOut);
 
             // Si aucune touche n'a été pressée, on continue simplement

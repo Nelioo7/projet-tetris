@@ -41,6 +41,15 @@ public class Carte {
         for(int g=0; g<this.map[ligne].length; g++){
             map[ligne][g].setOccupe(false);
         }
+        Main.score = (int) ((Main.score + 10) * 1.3); // incrémentation du score exponentielle
+        
+        if(Bloc.timeOut > 100 ) {
+            Bloc.timeOut = Bloc.timeOut - 30;
+        } else if (Bloc.timeOut <= 100 && Bloc.timeOut >= 30) {
+            Bloc.timeOut = Bloc.timeOut - 5;           
+        } else {
+            Bloc.timeOut = 20;
+        }
         return ligne;
     }
 

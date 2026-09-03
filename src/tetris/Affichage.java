@@ -16,7 +16,9 @@ public class Affichage {
 	public static final String	MAGENTA		= "\u001B[35m";
 	public static final String	CYAN		= "\u001B[36m";
     public static final String	BLACK	    = "\u001B[30m";
-
+    public static final String	BOLD	    = "\u001B[1m";
+    public static final String	UNDERLINE   = "\u001B[4m";
+    
 
     public static Random rand = new Random();
 
@@ -25,6 +27,7 @@ public class Affichage {
         BufferedReader br = new BufferedReader(new FileReader("res/affichage/ascii-art.txt"));
         StringBuilder s = new StringBuilder();
         int c;  
+        s.append(Affichage.BOLD);
         while ((c = br.read()) != -1) {
             if(Affichage.rand.nextInt(10) >= 4 ) {
                 s.append(Affichage.VERT);
@@ -39,7 +42,8 @@ public class Affichage {
         br.close();
         s.append(Affichage.RESET);
         System.out.println(s);
-
+        System.out.print("                                       ");
+        System.out.print(Affichage.UNDERLINE + Affichage.BOLD+ "Score : " + Main.score + Affichage.RESET +"\n");
         Case[][] map = carte.getMap();
         for (int y=0; y < map.length; y++){
             StringBuilder sb = new StringBuilder();

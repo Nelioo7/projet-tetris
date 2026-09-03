@@ -1,16 +1,14 @@
 package tetris;
 
 import java.io.IOException;
-import java.util.Random;
-
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.jline.terminal.Terminal.Signal;
 import org.jline.utils.NonBlockingReader;
 
 public class Main {
-
-    static long timeOut = 500;
+    
+    public static long score = 0;
 
     public static boolean gameOver(Carte tab) {
         for(int i = 0; i < tab.getMap()[0].length; i++) {
