@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2d14e54-64a6-4d3c-a9e1-6df6ff5b12fc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/bin/tetris/Affichage.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/tetris/Affichage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/tetris/Carre.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/tetris/Carre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/tetris/Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/tetris/Case.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Affichage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Barre.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris/Bloc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Bloc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Carre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Carre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/Case.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Eclaire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/EclaireInverse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/L.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/Linverse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/T.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +42,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "US__-__vue__en__temps__réel__redo",
+    "git-widget-placeholder": "coloration__des__blocks",
     "last_opened_file_path": "/home/infoetu/gauthier.guignon.etu/groupe-13"
   }
 }]]></component>
