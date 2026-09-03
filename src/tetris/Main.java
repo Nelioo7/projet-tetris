@@ -29,7 +29,7 @@ public class Main {
         t.enterRawMode();
 
         try{
-            while (Main.gameOver(tab)) {;
+            while (Main.gameOver(tab)) {
                 Bloc block = new Carre(tab);
                 block.getDown(tab, t);
                 for (int i=0 ; i<block.getCases().length ; i++){
@@ -39,6 +39,7 @@ public class Main {
             }
         } catch(InterruptedException ie){}
         catch(IOException ioe){}
+        
         try{
             Affichage.clearScreen();
             Affichage.afficherGameOver(tab);
