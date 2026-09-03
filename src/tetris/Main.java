@@ -6,9 +6,11 @@ import java.util.Random;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.jline.utils.NonBlockingReader;
+import org.jline.terminal.Attributes;
 
 public class Main {
     
+    public static String nomDuJoeur;
     public static long score = 0;
 
     public static boolean gameOver(Carte tab) {
@@ -35,11 +37,19 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException{
+
+        Writer w = new Writer();
+        Main.nomDuJoeur = w.demanderNomDuJoeur();
+
         Random r = new Random();
         Terminal t = TerminalBuilder.builder().dumb(true).build();
+        Attributes attrs = t.getAttributes();
         t.enterRawMode();
         NonBlockingReader reader = t.reader();
         boolean rejouer = true;
+
+
+
 
         while (rejouer) {
             Carte tab = new Carte();
@@ -51,9 +61,11 @@ public class Main {
                 Affichage.clearScreen();
                 Affichage.afficherGameOver(tab);
             } catch (IOException e) {}
-            Affichage.afficherPhrase("Appuyez sur"+ Affichage.ROUGE + " ENTER ⏎ " + Affichage.RESET+ "pour lancer une nouvelle partie, ou " + Affichage.ROUGE + "ECHAP" + Affichage.RESET + " pour quitter", 2);
+            Affichage.afficherPhrase("Bravo "+ Affichage.VERT + Main.nomDuJoeur +Affichage.RESET+ "! Appuyez sur"+ Affichage.ROUGE + " ENTER ⏎ " + Affichage.RESET+ "pour lancer une nouvelle partie, ou " + Affichage.ROUGE + "ECHAP" + Affichage.RESET + " pour quitter", 0);
 
+            Main.score = 0;
             rejouer = false;
+
             while (true) {
                 int c = reader.read();
                 if (c == 27) { // ESC = 27 dans le tableau ASCII
@@ -62,6 +74,9 @@ public class Main {
                 }
                 if (c == 13 || c == 10) { // Entrée = 13 ou 10 dans le tableau ASCII
                     rejouer = true;
+                    t.setAttributes(attrs);
+                    Main.nomDuJoeur = w.demanderNomDuJoeur();
+                    t.enterRawMode();
                     break;
                 }
             }

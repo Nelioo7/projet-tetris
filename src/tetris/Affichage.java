@@ -76,9 +76,11 @@ public class Affichage {
         while ((line = br.readLine()) != null) {
             System.out.println(line);
         }
-        System.out.println(Affichage.RESET);
+        System.out.print(Affichage.RESET);
         br.close();
-        
+        System.out.print("                                       ");
+        System.out.print(Affichage.UNDERLINE + Affichage.BOLD+ "Score : " + Main.score + Affichage.RESET +"\n");
+    
         Case[][] map = carte.getMap();
         for (int y=0; y < map.length; y++){
             StringBuilder sb = new StringBuilder();
@@ -94,6 +96,7 @@ public class Affichage {
             System.out.println(sb.toString());
         }
         System.out.println("                                     ██████████████████████");
+                // Writer.ecrireLeaderboard();
     }
 
     public static void clearScreen() { 
