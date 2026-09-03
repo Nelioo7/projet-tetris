@@ -3,7 +3,7 @@ package tetris;
 public class Carre extends Bloc {
     public Carre(Carte carte){
 
-        int r = Bloc.rand.nextInt(3);
+        int r = Bloc.rand.nextInt(6);
         this.setCouleur(this.randColor(r));
 
         this.setCases(new Case[4]);

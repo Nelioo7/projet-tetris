@@ -21,7 +21,11 @@ public abstract class Bloc {
     public String randColor(int r) {
         if(r == 0) return Affichage.BLEU;
         if(r == 1) return Affichage.ROUGE;
-        return Affichage.VERT;
+        if(r == 2) return Affichage.VERT;        
+        if(r == 3) return Affichage.YELLOW;
+        if(r == 4) return Affichage.MAGENTA;
+        if(r == 5) return Affichage.CYAN;
+        return Affichage.BLACK;
     }
 
 
