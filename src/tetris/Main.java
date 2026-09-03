@@ -32,12 +32,13 @@ public class Main {
 
         try{
             while (Main.gameOver(tab)) {
-                Bloc block = new Carre(tab);
-                block.getDown(tab, t);
-                for (int i=0 ; i<block.getCases().length ; i++){
-                    Case caseCarte = block.getMap()[block.getCases()[i].getPosY()][block.getCases()[i].getPosX()];
+                Bloc[] blocs = new Bloc[]{new Barre(tab), new Carre(tab), new Eclaire(tab), new EclaireInverse(tab), new L(tab), new Linverse(tab), new T(tab)};
+                int idx = r.nextInt(0,6);
+                blocs[idx].getDown(tab, t);
+                for (int i=0 ; i<blocs[idx].getCases().length ; i++){
+                    Case caseCarte = blocs[idx].getMap()[blocs[idx].getCases()[i].getPosY()][blocs[idx].getCases()[i].getPosX()];
                     caseCarte.setOccupe(true);
-                    caseCarte.setCouleur(block.getCases()[i].getCouleur());
+                    caseCarte.setCouleur(blocs[idx].getCases()[i].getCouleur());
                 }
                 tab.ligneASup();
             }
