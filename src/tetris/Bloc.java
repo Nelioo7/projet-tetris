@@ -126,6 +126,10 @@ public abstract class Bloc {
     public Case[][] getMap() {
         return map;
     }
+    
+    public String getCouleur() {
+            return couleur;
+    }
 
     public void setCases(Case[] cases) {
         this.cases = cases;
@@ -137,3 +141,5 @@ public abstract class Bloc {
 
     public abstract void rotation();
 }
+
+        
