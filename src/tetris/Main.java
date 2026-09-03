@@ -86,5 +86,4 @@ public class Main {
     }
 }
 
-// javac -d bin -cp bin:lib/jline-4.3.1.jar src/tetris/*.java
-// java -cp bin:lib/jline-4.3.1.jar tetris.Main
+
