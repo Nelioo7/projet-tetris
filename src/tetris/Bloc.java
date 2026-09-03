@@ -40,13 +40,18 @@ public abstract class Bloc {
             // Lecture clavier pendant maximum 500 ms
 
             int c = reader.read(timeOut);
+
+            // Si aucune touche n'a été pressée, on continue simplement
+            if (c == -1) {
+                c = 0;
+            }
             // stopper le soft
             if (c == 27) System.exit(0); // ESC = 27 dans le tableau ASCII
 
 
-            if( c == 'q'  && this.peutAllerAGauche() || c == 'd' && this.peutAllerADroite()) {
+            if( c == 'q'  && this.peutAllerAGauche() || c == 'd' && this.peutAllerADroite() || c == ' ' && this.peutTourner()) {
                 this.deplacement((char) c);
-            }else {
+            }else if (c != 'q' || c != 'd'){
                 this.descendre();
             }
         }
@@ -87,6 +92,9 @@ public abstract class Bloc {
                 descendre();
             }
         }
+        if(c == ' '){
+            rotation();
+        }
     }
 
     public boolean peutAllerADroite(){
@@ -109,6 +117,8 @@ public abstract class Bloc {
         return res;
     }
 
+    public abstract boolean peutTourner();
+
     public Case[] getCases() {
         return cases;
     }
@@ -125,7 +135,5 @@ public abstract class Bloc {
         this.map = map;
     }
 
-    public String getCouleur() {
-        return couleur;
-    }
+    public abstract void rotation();
 }
