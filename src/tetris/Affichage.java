@@ -8,10 +8,16 @@ import java.util.Random;
 
 public class Affichage {
     
-    public static final String RESET = "\u001B[0m";
-    public static final String ROUGE = "\u001B[31m";
-    public static final String BLEU   = "\u001B[34m";
-    public static final String VERT = "\u001B[32m";
+    public static final String RESET        = "\u001B[0m";
+    public static final String ROUGE        = "\u001B[31m";
+    public static final String BLEU         = "\u001B[34m";
+    public static final String VERT         = "\u001B[32m";
+    public static final String	YELLOW		= "\u001B[33m";
+	public static final String	MAGENTA		= "\u001B[35m";
+	public static final String	CYAN		= "\u001B[36m";
+    public static final String	BLACK	    = "\u001B[30m";
+
+
     public static Random rand = new Random();
 
     public static void afficherTetris(Carte carte, Bloc block) throws IOException{
@@ -47,7 +53,7 @@ public class Affichage {
                     }
                 }
                 if (map[y][x].isOccupe()) {
-                    sb.append("██");
+                    sb.append(map[y][x].getCouleur() + "██" + Affichage.RESET);
                 }else if (!blockTrouve){
                     sb.append("  ");
                 }
@@ -75,7 +81,7 @@ public class Affichage {
             sb.append("                                     █");
             for (int x=0 ; x < map[0].length; x++) {
                 if (map[y][x].isOccupe()) {
-                    sb.append("██");
+                    sb.append(Affichage.ROUGE + "██" + Affichage.RESET);
                 }else{
                     sb.append("  ");
                 }
