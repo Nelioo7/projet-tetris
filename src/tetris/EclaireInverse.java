@@ -3,7 +3,7 @@ package tetris;
 public class EclaireInverse extends Bloc {
         public EclaireInverse(Carte carte){
 
-        int r = Bloc.rand.nextInt(6);
+        int r = Bloc.rand.nextInt(0,6);
         this.setCouleur(this.randColor(r));
 
         this.setCases(new Case[4]);
