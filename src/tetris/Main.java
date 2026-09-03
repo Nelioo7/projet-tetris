@@ -24,7 +24,7 @@ public class Main {
     public static void jouerPartie(Carte tab, Terminal t, Random r) throws InterruptedException, IOException {
         while (Main.gameOver(tab)) {
             Bloc[] blocs = new Bloc[]{new Barre(tab), new Carre(tab), new Eclaire(tab), new EclaireInverse(tab), new L(tab), new Linverse(tab), new T(tab)};
-            int idx = r.nextInt(0,6);
+            int idx = r.nextInt(0,7);
             blocs[idx].getDown(tab, t);
             for (int i=0 ; i<blocs[idx].getCases().length ; i++){
                 Case caseCarte = blocs[idx].getMap()[blocs[idx].getCases()[i].getPosY()][blocs[idx].getCases()[i].getPosX()];

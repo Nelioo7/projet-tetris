@@ -2,9 +2,9 @@ package tetris;
 
 public class Barre extends Bloc {
         public Barre(Carte carte){
-        int r = Bloc.rand.nextInt();
+        int r = Bloc.rand.nextInt(0,6);
         this.setCouleur(this.randColor(r));
-        
+
         this.setCases(new Case[4]);
         this.getCases()[0] = new Case(3, 0, this.getCouleur() + "██" + Affichage.RESET, this.getCouleur());
         this.getCases()[1] = new Case(4, 0, this.getCouleur() + "██" + Affichage.RESET, this.getCouleur());

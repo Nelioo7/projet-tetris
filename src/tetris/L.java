@@ -3,9 +3,9 @@ package tetris;
 public class L extends Bloc {
         public L(Carte carte){
 
-        int r = Bloc.rand.nextInt(6);
+        int r = Bloc.rand.nextInt(0,6);
         this.setCouleur(this.randColor(r));
-        
+
         this.setCases(new Case[4]);
         this.getCases()[0] = new Case(4, 0,this.getCouleur() + "██" + Affichage.RESET, this.getCouleur());
         this.getCases()[1] = new Case(4, 1, this.getCouleur() + "██" + Affichage.RESET, this.getCouleur());
