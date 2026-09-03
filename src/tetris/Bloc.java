@@ -7,7 +7,7 @@ import org.jline.terminal.Terminal;
 import org.jline.utils.NonBlockingReader;
 
 public abstract class Bloc {
-    private final static long timeOut = 100;
+    private final static long timeOut = 50;
     private Case[] cases;
     private Case[][] map;
     private String couleur;
