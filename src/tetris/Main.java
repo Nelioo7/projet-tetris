@@ -33,7 +33,9 @@ public class Main {
                 Bloc block = new Carre(tab);
                 block.getDown(tab, t);
                 for (int i=0 ; i<block.getCases().length ; i++){
-                    block.getMap()[block.getCases()[i].getPosY()][block.getCases()[i].getPosX()].setOccupe(true);
+                    Case caseCarte = block.getMap()[block.getCases()[i].getPosY()][block.getCases()[i].getPosX()];
+                    caseCarte.setOccupe(true);
+                    caseCarte.setCouleur(block.getCases()[i].getCouleur());
                 }
                 tab.ligneASup();
             }
