@@ -5,6 +5,8 @@ public class Case {
     private int posX;
     private int posY;
     private String shape;
+    private String couleur;
+
     
     public Case(int posX, int posY, String shape){
         this.posX = posX;
@@ -12,33 +14,43 @@ public class Case {
         this.shape = shape;
         this.occupe = false;
     }
-
+    
     public Case(){
         this(0, 0, "██");
     }
-
+    
     public int getPosX(){
         return this.posX;
     }
-
+    
     public int getPosY(){
         return this.posY;
     }
-
+    
     public String getShape(){
         return this.shape;
     }
-
+    
     public boolean isOccupe() {
         return occupe;
     }
-
+    
     public void move(int x, int y){
         this.posX = x;
         this.posY = y;
     }
-
+    
     public void setOccupe(boolean occupe) {
         this.occupe = occupe;
     }
+    
+    public String getCouleur() {
+        return couleur;
+    }
+    
+    public void setCouleur(String couleur) {
+        this.couleur = couleur;
+    }
+    
+    
 }

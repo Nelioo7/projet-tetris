@@ -12,6 +12,7 @@ public class Affichage {
     public static final String ROUGE = "\u001B[31m";
     public static final String BLEU   = "\u001B[34m";
     public static final String VERT = "\u001B[32m";
+
     public static Random rand = new Random();
 
     public static void afficherTetris(Carte carte, Bloc block) throws IOException{
@@ -47,7 +48,7 @@ public class Affichage {
                     }
                 }
                 if (map[y][x].isOccupe()) {
-                    sb.append("██");
+                    sb.append(block.getCouleur() + "██" + Affichage.RESET);
                 }else if (!blockTrouve){
                     sb.append("  ");
                 }

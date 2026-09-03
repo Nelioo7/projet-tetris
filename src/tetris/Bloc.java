@@ -1,6 +1,7 @@
 package tetris;
 
 import java.io.IOException;
+import java.util.Random;
 
 import org.jline.terminal.Terminal;
 import org.jline.utils.NonBlockingReader;
@@ -9,6 +10,20 @@ public abstract class Bloc {
     private final static long timeOut = 100;
     private Case[] cases;
     private Case[][] map;
+    private String couleur;
+    
+    public static Random rand = new Random();
+    
+    public void setCouleur(String couleur) {
+        this.couleur = couleur;
+    }
+
+    public String randColor(int r) {
+        if(r == 0) return Affichage.BLEU;
+        if(r == 1) return Affichage.ROUGE;
+        return Affichage.VERT;
+    }
+
 
     public void getDown(Carte carte, Terminal t) throws InterruptedException, IOException{
 
@@ -39,6 +54,9 @@ public abstract class Bloc {
         for(int i=0;i<4;i++){
             if (!(this.cases[i].getPosY() + 1<this.map.length) || this.map[this.cases[i].getPosY() + 1][this.cases[i].getPosX()].isOccupe()) {
                 res = false;
+                for(Case c : this.getCases()) {
+                    c.setCouleur(this.couleur);
+                }
             }
         }
         return res;
@@ -102,5 +120,9 @@ public abstract class Bloc {
 
     public void setMap(Case[][] map) {
         this.map = map;
+    }
+
+    public String getCouleur() {
+        return couleur;
     }
 }
