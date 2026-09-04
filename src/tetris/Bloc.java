@@ -33,7 +33,7 @@ public abstract class Bloc {
 
         NonBlockingReader reader = t.reader();
         int lockMoves = 0;
-        final int maxLockMoves = 5;
+        final int maxLockMoves = 1;
         boolean enCours = true;
 
         while (enCours){
