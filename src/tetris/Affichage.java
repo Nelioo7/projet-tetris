@@ -12,12 +12,12 @@ public class Affichage {
     public static final String ROUGE        = "\u001B[31m";
     public static final String BLEU         = "\u001B[34m";
     public static final String VERT         = "\u001B[32m";
-    public static final String	YELLOW		= "\u001B[33m";
-	public static final String	MAGENTA		= "\u001B[35m";
-	public static final String	CYAN		= "\u001B[36m";
-    public static final String	BLACK	    = "\u001B[30m";
-    public static final String	BOLD	    = "\u001B[1m";
-    public static final String	UNDERLINE   = "\u001B[4m";
+    public static final String YELLOW		= "\u001B[33m";
+	public static final String MAGENTA		= "\u001B[35m";
+	public static final String CYAN		= "\u001B[36m";
+    public static final String BLACK	    = "\u001B[30m";
+    public static final String BOLD	    = "\u001B[1m";
+    public static final String UNDERLINE   = "\u001B[4m";
     
 
     public static Random rand = new Random();
@@ -35,10 +35,8 @@ public class Affichage {
                 s.append(Affichage.ROUGE);
             }
            s.append((char) c);
-            // if(Affichage.rand.nextInt(10) >= 4 ) {
-            //     s.append(Affichage.RESET);
-            // } 
         }
+        
         br.close();
         s.append(Affichage.RESET);
         System.out.println(s);

@@ -32,29 +32,50 @@ public abstract class Bloc {
     public void getDown(Carte carte, Terminal t) throws InterruptedException, IOException{
 
         NonBlockingReader reader = t.reader();
+        int lockMoves = 0;
+        final int maxLockMoves = 5;
+        boolean enCours = true;
 
-        while (this.peutDescendre()){
+        while (enCours){
             Affichage.clearScreen();
             Affichage.afficherTetris(carte, this);
-
-            // Lecture clavier pendant maximum 500 ms
-
             int c = reader.read(timeOut);
 
             if(!Character.isLetter(c) && c != ' ') c = 0;
 
-            // Si aucune touche n'a été pressée, on continue simplement
             if (c == -1) {
                 c = 0;
             }
             // stopper le soft
             if (c == 'p') System.exit(0);
 
+            boolean bouge = false;
 
-            if( c == 'q'  && this.peutAllerAGauche() || c == 'd' && this.peutAllerADroite() || c == ' ' && this.peutTourner()) {
-                this.deplacement((char) c);
-            }else if (c != 'q' || c != 'd'){
-                this.descendre();
+            if (c == 'q' && this.peutAllerAGauche()) {
+                this.deplacement('q');
+                bouge = true;
+            } else if (c == 'd' && this.peutAllerADroite()) {
+                this.deplacement('d');
+                bouge = true;
+            } else if (c == ' ' && this.peutTourner()) {
+                this.deplacement(' ');
+                bouge = true;
+            }
+
+            if (this.peutDescendre()) {
+                if (!bouge) {
+                    this.descendre();
+                }
+                lockMoves = 0;
+            } else {
+                if (bouge) {
+                    lockMoves++;
+                    if (lockMoves >= maxLockMoves) {
+                        enCours = false;
+                    }
+                } else {
+                    enCours = false;
+                }
             }
         }
     }
