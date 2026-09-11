@@ -1,4 +1,7 @@
 # TUI - TETRIS
+
+![Démo](res/demo.gif)
+
 Réalisé en 3 jours selon les principes Agile, sans IA.
 
 + Arthur Calande
